@@ -1,26 +1,16 @@
-import React from "react";
-import { createGlobalStyle } from "styled-components";
-import Create from "./components/todoCreate/Create";
-import Head from "./components/todoHead/Head";
-import TodoList from "./components/todoList/TodoList";
-import Template from "./components/todoTemplate/Template";
+import { CountProvider } from "./contexts/count";
+import { CountLabel } from "./components/countLabel";
+import { PlusBtn } from "./components/plusBtn";
 
-const GlobalStyle = createGlobalStyle`
-  body{
-    background: #e9ecef;
-  }
-`;
+// 공부 자료 아래 링크
+// https://dev-yakuza.posstree.com/ko/react/context-api/
 
 function App() {
   return (
-    <>
-      <GlobalStyle />
-      <Template>
-        <Head />
-        <TodoList />
-        <Create />
-      </Template>
-    </>
+    <CountProvider>
+      <CountLabel />
+      <PlusBtn />
+    </CountProvider>
   );
 }
 
